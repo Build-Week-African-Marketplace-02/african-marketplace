@@ -1,3 +1,3 @@
-const jwt = require("jsonwebtoken");
-const { jwtSecret } = require("../../config/secrets");
-module.exports = function (user) {};
+module.exports = {
+  jwtSecret: process.env.JWT_SECRET || "shh",
+};

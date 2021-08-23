@@ -1,7 +1,9 @@
-const router = require("express").Router();
 const bcrypt = require("bcryptjs");
-const tokenBuilder = require("./auth-token-builder");
-const Users = require("./auth-model");
+
+const router = require("express").Router();
+
+// const tokenBuilder = require("./auth-token-builder");
+const Users = require("../users/users-model");
 
 router.post("/register", (req, res, next) => {
     const { username, password, owner } = req.body;
@@ -13,3 +15,5 @@ router.post("/register", (req, res, next) => {
       .catch(next);
   }
 );
+
+module.exports = router;
