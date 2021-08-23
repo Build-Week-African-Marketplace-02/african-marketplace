@@ -20,6 +20,7 @@ exports.up = async (knex) => {
       items.string('item_description', 50).notNullable()
       items.float('item_price').notNullable()
       items.string('item_country').notNullable()
+      items.string('item_seller').notNullable()
     })
 }
 
