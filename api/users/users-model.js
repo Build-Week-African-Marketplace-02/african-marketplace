@@ -16,8 +16,12 @@ async function insertUser(user) {
   return newUserObject; // { user_id: 7, username: 'foo', password: 'xxxxxxx' }
 }
 
+ function findBy(filter) {
+  return db("users").select("*").where(filter);
+}
 
 module.exports = {
-    getAllUsers,
-    insertUser
-}
+  getAllUsers,
+  insertUser,
+  findBy,
+};
