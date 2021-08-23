@@ -19,7 +19,7 @@ server.use('/api/users', usersRouter);
 
 server.use((err, req, res, next) => {
   res.status(err.status || 500).json({
-    custom: "Auth router issue",
+    custom: "Catch all fail",
     message: err.message,
     stack: err.stack,
   });

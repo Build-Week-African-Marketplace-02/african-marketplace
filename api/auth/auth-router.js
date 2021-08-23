@@ -7,16 +7,19 @@ const Users = require("../users/users-model");
 
 
 router.post("/register", (req, res, next) => {
-    const { username, password, owner } = req.body;
+    const { username, password } = req.body;
     const hash = bcrypt.hashSync(password, 8);
-    Users.insertUser({ username, password: hash, owner })
+    Users.insertUser({ username, password: hash })
       .then((newUser) => {
         res.status(201).json(newUser);
       })
       .catch(next);
-  }
-);
+    }
+  );
 
+router.get("/answer", (req, res, next) => {
+  res.json("hello")
+})  
 
 router.post("/login", (req, res, next) => {
   const { username, password } = req.body;
