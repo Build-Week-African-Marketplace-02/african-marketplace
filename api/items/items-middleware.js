@@ -12,13 +12,15 @@ const checkPayload = async (req, res, next) => {
         item_description,
         item_price,
         item_country,
+        item_seller
     } = req.body
 
     if (
     !item_name||
     !item_description||
     !item_price||
-    !item_country) {
+    !item_country||
+    !item_seller) {
         res.status(401).json({ message: 'Please enter all required fields to add a new item' })
     }
     else {

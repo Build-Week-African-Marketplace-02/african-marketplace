@@ -13,7 +13,8 @@ const addItem = (item) => {
         ['item_name',
         'item_description',
         'item_price',
-        'item_country'
+        'item_country',
+        'item_seller'
     ])
 }
 
