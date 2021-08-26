@@ -5,17 +5,19 @@ exports.up = async (knex) => {
       users.string('username', 200).notNullable()
       users.string('password', 200).notNullable()
       users.timestamps(false, true)
-      users.string('something')
     })
     .createTable('items', (items) =>{
       items.increments('items_id')
-      items.integer('user_id')
+
+      items
+        .integer("user_id")
         .unsigned()
         .notNullable()
-        .references('user_id')
-        .inTable('users')
-        .onDelete('RESTRICT')
-        .onUpdate('RESTRICT')
+        .references("user_id")
+        .inTable("users")
+        .onDelete("CASCADE")
+        .onUpdate("CASCADE");
+
       items.string('item_name', 30).notNullable()
       items.string('item_description', 50).notNullable()
       items.float('item_price').notNullable()

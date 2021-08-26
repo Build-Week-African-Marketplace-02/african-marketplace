@@ -1,3 +1,10 @@
+
+## African Marketplace api endpoints
+
+**API URL** 
+https://african-marketplace-44.herokuapp.com/
+
+
 Heroku Link - https://african-marketplace-44.herokuapp.com
 
 /auth/
@@ -20,7 +27,9 @@ Delete a user - [DELETE] - api/users/:id
 
 /api/items
 
+
 Create a new item - [POST] - api/items/
+
 
 Get all available items - [GET] - api/items/
 
