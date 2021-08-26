@@ -2,7 +2,7 @@ const Items = require('./items-model')
 
 const checkId = async (req, res, next) => {
     const { id } = req.params
-    const item = await Potlucks.getById(id)
+    const item = await Items.getById(id)
     !item ? res.status(404).json({message: `Item with ID of ${id} not found`}) : next()
 }
 

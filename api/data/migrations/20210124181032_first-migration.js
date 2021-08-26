@@ -8,6 +8,7 @@ exports.up = async (knex) => {
     })
     .createTable('items', (items) =>{
       items.increments('items_id')
+
       items
         .integer("user_id")
         .unsigned()
@@ -16,11 +17,13 @@ exports.up = async (knex) => {
         .inTable("users")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
+
       items.string('item_name', 30).notNullable()
       items.string('item_description', 50).notNullable()
       items.float('item_price').notNullable()
       items.string('item_country').notNullable()
       items.string('item_seller').notNullable()
+        .references('username').inTable('users')
     })
 }
 

@@ -1,77 +1,40 @@
+
 ## African Marketplace api endpoints
 
 **API URL** 
 https://african-marketplace-44.herokuapp.com/
 
 
-## API endpoints
+Heroku Link - https://african-marketplace-44.herokuapp.com
 
-### Register as a user
-#### POST /auth/register 
+/auth/
 
-To create a new user the following data is required
-{
-  username: "string up to 50 characters longs, 
-  password: "string min 10 characters up to 50 characters long"
-}
+Login as a registered user - grants a token upon success - [POST] - auth/login
 
-It will return the following data to you
+Sign up to be a user - [POST] - auth/register
 
-{
-  username: "testUsername", 
-  user_id: "5" 
-}
+/api/users
 
-### Login as a user
-#### POST /auth/login 
+Create a new user - [POST] - api/users/
 
-{
-  username: "testUsername", 
-  password: "1234"
-}
+Get all available users - [GET] - api/users/
 
-On a successful login it will return the following
-{ 
-  message: "welcome, testUsername",
-  token: "eyJhbGciOiJ..."
-}
+Get a specific user - [GET] - api/users/:id
 
-Unsuccessful login with a unknown username will return 
-{
-  message: "This username is unknown please try again"
-}
+Update a user - [PUT] - api/users/:id
+
+Delete a user - [DELETE] - api/users/:id
+
+/api/items
 
 
-Unsuccessful login with the wrong password will return 
-{
-  message: "Please enter the correct password"
-}
+Create a new item - [POST] - api/items/
 
 
-### Create a product
-#### POST /auth/products/create
+Get all available items - [GET] - api/items/
 
-To submit a new product the following data is required 
+Get a specific item - [GET] - api/items/:id
 
-{
-  "itemDescription": "string up to 50 characters long",
-  "itemName": "string up to 30 characters long",
-  "itemPrice": "float",
-  "itemCountry": "string exactly 3 in length",
-  "itemSeller": "username"
-}
+Update a item - [PUT] - api/items/:id
 
-### Products 
-#### GET /products
-
-This will return the data in the following format
-
-{
-  "itemDescription": "string up to 50 characters long",
-  "itemName": "string up to 30 characters long",
-  "itemPrice": "float",
-  "itemCountry": "string exactly 3 in length",
-  "itemSeller": "username"
-}
-
-
+Delete a item - [DELETE] - api/items/:id
